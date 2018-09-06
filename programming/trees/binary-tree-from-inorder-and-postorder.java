@@ -1,5 +1,10 @@
 /*
 
+
+https://www.interviewbit.com/problems/binary-tree-from-inorder-and-postorder/
+
+
+
 Binary Tree From Inorder And Postorder
 Asked in:  
 Amazon
