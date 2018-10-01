@@ -30,7 +30,7 @@ A : For the purpose of this question, NO. Even if the input has zeroes before th
 
 public class Solution {
     public ArrayList<Integer> plusOne(ArrayList<Integer> A) {
-        for(Integer i = A.size()-1; i > -1; i--) {
+        for(int i = A.size()-1; i > -1; i--) {
             if(A.get(i) == 9) {
                 A.set(i, 0);
             } else {
@@ -39,23 +39,20 @@ public class Solution {
             }
         }
         
-        ArrayList<Integer> B = new ArrayList<Integer>();
-        Boolean flag = false;
-        for(Integer i = 0; i < A.size(); i++) {
-            if(!flag && A.get(i) == 0) {
-                if(i == A.size()-1) {
-                    B.add(1);
-                    for(Integer j = 0; j < A.size(); j++) {
-                        B.add(0);
-                    }
-                }
-                continue;
+        int i = 0;
+        for(; i < A.size(); i++) {
+            if(A.get(i) != 0) {
+                break;
             }
-            flag = true;
-            B.add(A.get(i));
         }
         
-        return B;
+        if(i == A.size()) {
+            A.add(0, 1);
+            return A;
+        } else {
+            return new ArrayList(A.subList(i, A.size()));
+        }
+        
         
     }
 }
